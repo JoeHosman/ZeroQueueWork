@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldRepClient", "Hell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldRepServer", "HelloWorldRepServer\HelloWorldRepServer.csproj", "{4D2FC541-95BB-4A40-A308-AF80ADED52F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeroQueueVersionCheck", "ZeroQueueVersionCheck\ZeroQueueVersionCheck.csproj", "{253892CE-3AF1-4DF6-BDF5-49FC9DF49C9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,6 +23,10 @@ Global
 		{4D2FC541-95BB-4A40-A308-AF80ADED52F1}.Debug|x86.Build.0 = Debug|x86
 		{4D2FC541-95BB-4A40-A308-AF80ADED52F1}.Release|x86.ActiveCfg = Release|x86
 		{4D2FC541-95BB-4A40-A308-AF80ADED52F1}.Release|x86.Build.0 = Release|x86
+		{253892CE-3AF1-4DF6-BDF5-49FC9DF49C9E}.Debug|x86.ActiveCfg = Debug|x86
+		{253892CE-3AF1-4DF6-BDF5-49FC9DF49C9E}.Debug|x86.Build.0 = Debug|x86
+		{253892CE-3AF1-4DF6-BDF5-49FC9DF49C9E}.Release|x86.ActiveCfg = Release|x86
+		{253892CE-3AF1-4DF6-BDF5-49FC9DF49C9E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -28,5 +34,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E046569F-9DB7-4FC6-865C-D929DC2DC0E4} = {DB920BE1-0E37-4CA2-87B0-B27E138DD6F7}
 		{4D2FC541-95BB-4A40-A308-AF80ADED52F1} = {DB920BE1-0E37-4CA2-87B0-B27E138DD6F7}
+		{253892CE-3AF1-4DF6-BDF5-49FC9DF49C9E} = {DB920BE1-0E37-4CA2-87B0-B27E138DD6F7}
 	EndGlobalSection
 EndGlobal
