@@ -39,7 +39,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyResourceRequestClient"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyResourceReplyServer", "ProxyResourceReplyServer\ProxyResourceReplyServer.csproj", "{EABDFD00-16CD-4FC0-BCBA-0AE7E81FB8BA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MDP", "MDP", "{D527C86D-836A-49FD-8130-07CA7042122B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDPClientLibrary", "MDPClientLibrary\MDPClientLibrary.csproj", "{C5A9AA28-7DAB-443B-9922-43780E71EC5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDPClientLibraryTests", "MDPClientLibraryTests\MDPClientLibraryTests.csproj", "{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91584E94-F281-4E83-816A-27A81BBF5FD1}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		ZeroQueueWork.vsmdi = ZeroQueueWork.vsmdi
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ZeroQueueWork.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -209,6 +225,26 @@ Global
 		{EABDFD00-16CD-4FC0-BCBA-0AE7E81FB8BA}.Release|Mixed Platforms.Build.0 = Release|x86
 		{EABDFD00-16CD-4FC0-BCBA-0AE7E81FB8BA}.Release|x86.ActiveCfg = Release|x86
 		{EABDFD00-16CD-4FC0-BCBA-0AE7E81FB8BA}.Release|x86.Build.0 = Release|x86
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A}.Release|x86.ActiveCfg = Release|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F6E5D20A-0218-4467-A330-6C1DE8CAFB65}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -230,5 +266,6 @@ Global
 		{A768BE94-25A0-4C7B-9565-18FD22FCD8F8} = {B852905B-3397-47E9-9C2E-6D1606AD1174}
 		{AAB43384-C785-411E-B28F-0D0BFD38AD23} = {B852905B-3397-47E9-9C2E-6D1606AD1174}
 		{EABDFD00-16CD-4FC0-BCBA-0AE7E81FB8BA} = {B852905B-3397-47E9-9C2E-6D1606AD1174}
+		{C5A9AA28-7DAB-443B-9922-43780E71EC5A} = {D527C86D-836A-49FD-8130-07CA7042122B}
 	EndGlobalSection
 EndGlobal

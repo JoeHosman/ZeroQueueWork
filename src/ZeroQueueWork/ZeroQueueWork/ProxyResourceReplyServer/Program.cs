@@ -17,9 +17,11 @@ namespace ProxyResourceReplyServer
             {
                 using (Socket proxyRequester = context.Socket(SocketType.REP))
                 {
-                    proxyRequester.Bind(listeningAddress);
                     string requestType = "GET_PROXY_RESOURCE";
-                    proxyRequester.Subscribe(requestType, Encoding.Unicode);
+                    proxyRequester.StringToIdentity(requestType, Encoding.Unicode);
+                    proxyRequester.Bind(listeningAddress);
+
+
                     while (true)
                     {
                         var jsonRequest = proxyRequester.Recv(Encoding.Unicode);

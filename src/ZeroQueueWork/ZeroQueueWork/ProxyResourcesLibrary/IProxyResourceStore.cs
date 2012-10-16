@@ -32,11 +32,4 @@
         public GetProxyResourceRequest Request { get; set; }
         public ProxyResource ProxyResource { get; set; }
     }
-
-    public class ProxyResource
-    {
-        public ulong ProxyId { get; set; }
-        public ulong ResourceTypeId { get; set; }
-        public string ProxyAddress { get; set; }
-    }
 }
