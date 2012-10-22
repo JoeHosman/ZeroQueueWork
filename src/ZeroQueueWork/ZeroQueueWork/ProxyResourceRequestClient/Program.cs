@@ -1,31 +1,44 @@
-﻿using System.Text;
+﻿using System;
 using ProxyResourcesLibrary;
-using ServiceStack.Text;
 using ZMQ;
 
 namespace ProxyResourceRequestClient
 {
     class Program
     {
+        private static bool _interrupted;
+
         static void Main(string[] args)
         {
+            Console.CancelKeyPress += delegate { _interrupted = true; };
 
-
-            using (var context = new Context(1))
+            while (!_interrupted)
             {
-                var proxyStoreFactory = new ProxyStoreZeroMQFactory(context);
-
-                var proxyResourceService = proxyStoreFactory.Build();
-
-                var getProxyResourceRequest = new GetProxyResourceRequest { TargetUrl = "http://www.ticketmaster.com/example" };
-
-                const int requestsToSend = 10;
-
-                for (int requestNumber = 0; requestNumber < requestsToSend; requestNumber++)
+                using (var context = new Context(1))
                 {
-                    proxyResourceService.GetProxyResource(getProxyResourceRequest);
-                }
+                    var proxyStoreFactory = new ProxyStoreZeroMQFactory(context);
 
+                    var proxyResourceService = proxyStoreFactory.Build();
+
+                    var getProxyResourceRequest = new GetProxyResourceRequest { TargetUrl = "http://www.ticketmaster.com/example" };
+
+                    const int requestsToSend = 1000;
+
+                    DateTime start = DateTime.UtcNow;
+                    for (int requestNumber = 0; requestNumber < requestsToSend; requestNumber++)
+                    {
+                        var resource = proxyResourceService.GetProxyResource(getProxyResourceRequest);
+
+                        ReleaseProxyResourceRequest releaseRequest = new ReleaseProxyResourceRequest() { ProxyResource = resource.ProxyResource };
+                        proxyResourceService.ReleaseProxyResource(releaseRequest);
+
+
+                    }
+                    DateTime end = DateTime.UtcNow;
+
+                    Console.WriteLine("{0} took {1}", requestsToSend, end.Subtract(start));
+
+                }
             }
         }
     }
@@ -42,42 +55,6 @@ namespace ProxyResourceRequestClient
         public IProxyResourceService Build()
         {
             return new ZeroMQProxyResourceStore(_context);
-        }
-    }
-
-    internal class ZeroMQProxyResourceStore : IProxyResourceService
-    {
-        const string proxyStoreAddress = "tcp://localhost:5555";
-        private readonly Context _zMqContext;
-
-        public ZeroMQProxyResourceStore(Context zMQContext)
-        {
-            _zMqContext = zMQContext;
-
-        }
-
-        public GetProxyResourceResponse GetProxyResource(GetProxyResourceRequest request)
-        {
-            var jsonRequest = JsonSerializer.SerializeToString(request);
-
-            var response = new GetProxyResourceResponse(request);
-            using (Socket proxyResourceService = _zMqContext.Socket(SocketType.REQ))
-            {
-                proxyResourceService.Connect(proxyStoreAddress);
-
-                proxyResourceService.SendMore("GET_PROXY_RESOURCE", Encoding.Unicode);
-                proxyResourceService.Send(jsonRequest, Encoding.Unicode);
-
-                string jsonResponse = proxyResourceService.Recv(Encoding.Unicode);
-
-                response = JsonSerializer.DeserializeFromString<GetProxyResourceResponse>(jsonResponse);
-            }
-            return response;
-        }
-
-        public ReleaseProxyResourceResponse ReleaseProxyResource(ReleaseProxyResourceRequest request)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -13,6 +13,13 @@
 
     public class ReleaseProxyResourceResponse
     {
+        private readonly ReleaseProxyResourceRequest _request;
+
+        public ReleaseProxyResourceResponse(ReleaseProxyResourceRequest request)
+        {
+            _request = request;
+        }
+
         public ReleaseProxyResourceRequest Request { get; set; }
     }
 

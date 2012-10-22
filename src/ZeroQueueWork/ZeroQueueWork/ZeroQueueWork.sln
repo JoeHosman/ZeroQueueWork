@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter 01", "Chapter 01", "{DB920BE1-0E37-4CA2-87B0-B27E138DD6F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldRepClient", "HelloWorldRepClient\HelloWorldRepClient.csproj", "{E046569F-9DB7-4FC6-865C-D929DC2DC0E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldReqClient", "HelloWorldRepClient\HelloWorldReqClient.csproj", "{E046569F-9DB7-4FC6-865C-D929DC2DC0E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldRepServer", "HelloWorldRepServer\HelloWorldRepServer.csproj", "{4D2FC541-95BB-4A40-A308-AF80ADED52F1}"
 EndProject
